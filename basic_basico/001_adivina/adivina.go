@@ -1,15 +1,11 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
 	"math/rand"
-	"os"
 
 	"github.com/crbrox/exercises/basic"
 )
-
-var input = bufio.NewReader(os.Stdin)
 
 func main() {
 
