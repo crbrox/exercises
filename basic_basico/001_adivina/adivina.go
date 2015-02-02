@@ -16,9 +16,9 @@ pulsa la tecla RETURN.`)
 
 	otra := true // Otra partida?
 	for otra {
-		acertado := false   // Ha conseguido acertar
-		x := rand.Intn(101) // Número oculto
-		i := 0              // Número de intentos
+		acertado := false       // Ha conseguido acertar
+		x := 1 + rand.Intn(100) // Número oculto
+		i := 0                  // Número de intentos
 		for !acertado {
 			var n int // Suposición del jugador
 			basic.Input("Escribe tu numero ", &n)
