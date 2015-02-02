@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"math/rand"
 	"os"
+
+	"github.com/crbrox/exercises/basic"
 )
 
 var input = bufio.NewReader(os.Stdin)
@@ -23,8 +25,7 @@ pulsa la tecla RETURN.`)
 		i := 0              // Número de intentos
 		for !acertado {
 			var n int // Suposición del jugador
-			fmt.Print("Escribe tu numero ")
-			fmt.Scanln(&n)
+			basic.Input("Escribe tu numero ", &n)
 			i++
 			if n < x {
 				fmt.Println("Más alto")
@@ -38,13 +39,7 @@ pulsa la tecla RETURN.`)
 		}
 		var resp string
 		for resp != "N" && resp != "S" {
-			var err error
-			fmt.Print("¿Quieres volver a jugar (S/N)?")
-			resp, err = input.ReadString('\n')
-			if err != nil {
-				os.Exit(1)
-			}
-			resp = resp[:len(resp)-1]
+			basic.Input("¿Quieres volver a jugar (S/N)?", &resp)
 		}
 		otra = resp == "S"
 
