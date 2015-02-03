@@ -1,6 +1,7 @@
 Traducción  (más o menos libre, sin GOTO p.e.) de los ejercicios del libro
 
-[Basic básico. Curso de programación.][1] 1983
-de Ricardo Aguado-Muñoz (Autor), Agustín Blanco (Autor), Javier Zabala (Autor), Ricardo Zamarreño (Autor)
+[PROGRAMAS COMENTADOS DE BASIC BASICO][1] Tapa blanda – 1984
+de Ricardo y otros AGUADO-MUÑOZ (Autor)
 
-[1]: http://www.amazon.es/Basic-básico-programación-Ricardo-Aguado-Muñoz/dp/B00H1S6ZL2/ref=sr_1_15?s=books&ie=UTF8&qid=1422987338&sr=1-15&keywords=basic+basico
+[1]: http://www.amazon.es/PROGRAMAS-COMENTADOS-BASICO-Ricardo-AGUADO-MU%C3%91OZ/dp/B00I4CYRNM/ref=sr_1_2?ie=UTF8&qid=1423003788&sr=8-2&keywords=Programas+Comentados+En+Basic
+
