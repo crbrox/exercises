@@ -4,7 +4,6 @@ import (
 	"bufio"
 	"errors"
 	"fmt"
-	"math"
 	"os"
 	"strconv"
 )
@@ -16,22 +15,12 @@ import (
 // se cambie.
 // También se podria usar un Scanner en vez de el buffer reader
 
-const MaxUint = ^uint(0)
-
 var (
 	input          = bufio.NewReader(os.Stdin)
 	output         = bufio.NewWriter(os.Stdout)
-	intSize        int
 	MustBeAPointer = errors.New("basic.Input: arg must be a pointer")
 )
 
-func init() {
-	if MaxUint == math.MaxInt64 {
-		intSize = 64
-	} else {
-		intSize = 32
-	}
-}
 func getString() (string, error) {
 	str, err := input.ReadString('\n')
 	if err != nil {
@@ -58,7 +47,7 @@ func getInt64() (int64, error) {
 	return getIntSize(64)
 }
 func getInt() (int, error) {
-	i64, err := getIntSize(intSize)
+	i64, err := getIntSize(strconv.IntSize)
 	return int(i64), err
 }
 func getUintSize(size int) (uint64, error) {
@@ -80,7 +69,7 @@ func getUint64() (uint64, error) {
 	return getUintSize(64)
 }
 func getUint() (uint, error) {
-	i64, err := getUintSize(intSize)
+	i64, err := getUintSize(strconv.IntSize)
 	return uint(i64), err
 }
 func getFloatSize(size int) (float64, error) {
