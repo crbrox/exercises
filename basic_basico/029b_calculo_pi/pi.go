@@ -4,6 +4,7 @@ import (
 	"flag"
 	"fmt"
 	"math/rand"
+	"time"
 
 	"runtime"
 )
@@ -15,9 +16,10 @@ var (
 
 func lanzamiento(n int) (m int) {
 	var x, y float64
+	r := rand.New(rand.NewSource(time.Now().UnixNano()))
 	for i := 0; i < n; i++ {
-		x = rand.Float64()
-		y = rand.Float64()
+		x = r.Float64()
+		y = r.Float64()
 		if x*x+y*y < 1 {
 			m++
 		}
