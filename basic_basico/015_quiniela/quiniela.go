@@ -1,3 +1,6 @@
+//Obtén los 14 signos de una quiniela de fútbol teniendo en cuenta
+//una probabilidad de 50% para el signo 1, del 30%, para el signo X
+//y del 20% para el signo 2.
 package main
 
 import (
