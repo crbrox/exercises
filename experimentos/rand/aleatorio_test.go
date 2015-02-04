@@ -22,7 +22,7 @@ func BenchmarkInt31(b *testing.B) {
 }
 func BenchmarkInt63(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		rand.Int31()
+		rand.Int63()
 	}
 }
 func BenchmarkUint32(b *testing.B) {
