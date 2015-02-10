@@ -14,7 +14,7 @@ func main() {
 	var N int
 
 	fmt.Println()
-	fmt.Println("\tCáculo de la media y la desviación estándar")
+	fmt.Println("\tCálculo de la media y la desviación estándar")
 	for {
 		basic.Input("\t¿Cuántos puntos? ", &N)
 		if N <= Max {
