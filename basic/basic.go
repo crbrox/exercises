@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"os"
 	"strconv"
+	"strings"
 )
 
 // A lo hecho, pecho. Esto es probablemente más farragoso
@@ -26,7 +27,7 @@ func getString() (string, error) {
 	if err != nil {
 		return "", err
 	}
-	return str[:len(str)-1], err
+	return strings.TrimRight(str, "\r\n"), err
 }
 func getIntSize(size int) (int64, error) {
 	str, err := getString()
