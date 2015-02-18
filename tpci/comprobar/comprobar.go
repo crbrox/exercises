@@ -14,16 +14,11 @@ import (
 const (
 	MEDIA      = 0.5
 	DESVIACION = 0.2887
+	M          = 48
+	N          = 20 * M
 )
 
-func main() {
-	const N = 10000
-	const M = 1000
-	var numbers [N]float64
-	// Generamos todos los números
-	for i := range numbers {
-		numbers[i] = rand.Float64()
-	}
+func porTrozos(numbers [N]float64) {
 	//sacamos la media y la desviación
 	//en bloques de M elementos
 	fmt.Printf("%-8s %8s\n", "Media", "Desviación")
@@ -33,5 +28,30 @@ func main() {
 		m, d := tcpi.MedEst(numbers[j : j+M])
 		fmt.Printf("%2.6f %2.6f (%+2.6f) (%+2.6f)\n", m, d, m-MEDIA, d-DESVIACION)
 	}
+}
+func main() {
+	const ()
+	var numbers [N]float64
+
+	fmt.Println("UNIFORME (math/rand)")
+	// Generamos todos los números
+	for i := range numbers {
+		numbers[i] = rand.Float64()
+	}
+	porTrozos(numbers)
+
+	fmt.Println("GAUSS (tcpi)")
+	// Generamos todos los números con dist. gaussiana
+	for i := range numbers {
+		numbers[i] = tcpi.Aleatg(MEDIA, DESVIACION)
+	}
+	porTrozos(numbers)
+
+	fmt.Println("GAUSS (math/rand)")
+	// Generamos todos los números con dist. gaussiana
+	for i := range numbers {
+		numbers[i] = rand.NormFloat64()*DESVIACION + MEDIA
+	}
+	porTrozos(numbers)
 
 }
