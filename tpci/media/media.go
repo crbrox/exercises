@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	"github.com/crbrox/exercises/basic"
+	"github.com/crbrox/exercises/tpci/tpci"
 )
 
 func main() {
@@ -25,7 +26,7 @@ func main() {
 	for i := 0; i < N; i++ {
 		basic.Input(fmt.Sprintf("%3d: ", i+1), &xs[i])
 	}
-	media, dest = medEst(xs)
+	media, dest = tcpi.MedEst(xs)
 	fmt.Println()
 	fmt.Printf("\tPara %3d puntos Media = %8.4f Sigma = %8.4f\n", N, media, dest)
 }
