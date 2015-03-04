@@ -32,7 +32,7 @@ func metodo2() (x, pruebas int) {
 		x = i * i
 		cadena := strconv.Itoa(i * i)
 		pruebas++
-		if cadena[0] == cadena[1] && cadena[2] == cadena[3] { // Es un cuadrado perfecto
+		if cadena[0] == cadena[1] && cadena[2] == cadena[3] { // Es de la forma aabb
 			return x, pruebas
 		}
 	}
