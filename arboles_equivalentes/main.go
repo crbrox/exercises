@@ -88,7 +88,7 @@ func Inserta(a *Arbol, i int) *Arbol {
 	if a == nil {
 		return &Arbol{Valor: i}
 	}
-	if a.Valor < i {
+	if i < a.Valor {
 		a.Izquierdo = Inserta(a.Izquierdo, i)
 	} else {
 		a.Derecho = Inserta(a.Derecho, i)
@@ -99,7 +99,10 @@ func (a *Arbol) String() string {
 	if a == nil {
 		return " "
 	}
-	return fmt.Sprintf("[%s,%d,%s]", a.Izquierdo, a.Valor, a.Derecho)
+	if a.Derecho == nil && a.Izquierdo == nil { // Estamos en una hoja}
+		return fmt.Sprintf("(%d)", a.Valor)
+	}
+	return fmt.Sprintf("%d -> [%s,%s]", a.Valor, a.Izquierdo, a.Derecho)
 }
 
 func Nuevo(k int) *Arbol {
