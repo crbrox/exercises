@@ -14,26 +14,26 @@ func TestMain(t *testing.T) {
 
 }
 func TestMerge(t *testing.T) {
-	var cases = [][3][]int{
+	var cases = []struct{a,b,expected []int}{
 		{{1, 3, 5}, {2, 4, 6}, {1, 2, 3, 4, 5, 6}},
 		{{}, {}, {}},
 		{{9}, {3}, {3, 9}},
 		{{1}, {}, {1}},
 	}
 	for i, c := range cases {
-		actual := merge(c[0], c[1])
-		if !reflect.DeepEqual(actual, c[2]) {
-			t.Fatalf("case %d: should %#v, actual %#v\n", i, c[2], actual)
+		actual := merge(c.a, c.b)
+		if !reflect.DeepEqual(actual, c.expected) {
+			t.Fatalf("case %d: should %#v, actual %#v\n", i, c.expected, actual)
 		}
 		// And it should be commutative
-		actual = merge(c[1], c[0])
-		if !reflect.DeepEqual(actual, c[2]) {
-			t.Fatalf("case %d (reverse): should %#v, actual %#v\n", i, c[2], actual)
+		actual = merge(c.b, c.a)
+		if !reflect.DeepEqual(actual, c.expected) {
+			t.Fatalf("case %d (reverse): should %#v, actual %#v\n", i, c.expected, actual)
 		}
 	}
 }
 func TestSort(t *testing.T, ) {
-	var cases = [][2][]int{
+	var cases = []struct{ input, expected}[]int}{
 		{{}, {}},
 		{{1}, {1}},
 		{{1, 2}, {1, 2}},
@@ -42,9 +42,9 @@ func TestSort(t *testing.T, ) {
 		{{1, 5, 2, 6, 3, 8}, {1, 2, 3, 5, 6, 8}},
 	}
 	for i, c := range cases {
-		actual := sort(c[0])
-		if !reflect.DeepEqual(actual, c[1]) {
-			t.Fatalf("case %d: should %#v, actual %#v\n", i, c[1], actual)
+		actual := sort(c.input)
+		if !reflect.DeepEqual(actual, c.expected) {
+			t.Fatalf("case %d: should %#v, actual %#v\n", i, c.expected, actual)
 		}
 	}
 }
