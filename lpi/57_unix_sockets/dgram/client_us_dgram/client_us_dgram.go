@@ -24,7 +24,7 @@ func main() {
 		log.Fatal(err)
 	}
 	for _, msg := range os.Args[1:] {
-		nw, err := unixConn.WriteTo([]byte(msg), serverAddr)
+		nw, err := unixConn.WriteToUnix([]byte(msg), serverAddr)
 		log.Printf("(error: %v) enviados %d bytes\n", err, nw)
 		if err != nil {
 			// No esperamos repuesta si el envio no ha ido bien

@@ -29,7 +29,7 @@ func main() {
 			continue
 		}
 		resp := bytes.ToUpper(msg[:size])
-		nw, err := unixConn.WriteTo(resp, sender)
+		nw, err := unixConn.WriteToUnix(resp, sender)
 		log.Printf("(error: %v) enivados %d bytes", err, nw)
 	}
 }
