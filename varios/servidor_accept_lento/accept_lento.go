@@ -8,13 +8,14 @@ import (
 	"time"
 )
 
-const delayInSeconds = 10
+const delayInSeconds = 2
 
 type SlowListener struct {
 	net.Listener
 }
 
 func (sl SlowListener) Accept() (c net.Conn, err error) {
+	log.Println("Conexión entrante")
 	time.Sleep(delayInSeconds * time.Second)
 	return sl.Listener.Accept()
 }
@@ -30,5 +31,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	log.Fatal(http.Serve(SlowListener{lsnr}, nil))
+	server := &http.Server{}
+	server.SetKeepAlivesEnabled(false)
+	log.Fatal(server.Serve(SlowListener{lsnr}))
 }
