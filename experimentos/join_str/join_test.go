@@ -9,7 +9,7 @@ import (
 // puede eliminar código que no vea que tiene un
 // uso posterior
 
-const maxLen = 1e3
+const maxLen = 10e3
 
 var strs = make([]string, 0, maxLen)
 
