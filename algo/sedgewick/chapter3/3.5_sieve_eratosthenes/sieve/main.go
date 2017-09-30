@@ -43,7 +43,3 @@ func main() {
 	}
 	fmt.Println()
 }
-func fatalError(x interface{}) {
-	fmt.Println(x)
-	os.Exit(-1)
-}
