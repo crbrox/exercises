@@ -4,7 +4,7 @@
 #include <time.h>
 
 typedef struct point {
-	float x, y;
+	double x, y;
 } point;
 
 double distance(point a, point b)
