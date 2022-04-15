@@ -19,11 +19,11 @@ double randDouble()
 	return 1.0 * random() / ((long)(1 << 31) - 1L);
 }
 
-int main(int argc, char *argv[])
+int main(/*int argc, char *argv[]*/)
 {
 	//double d = atof (argv[2]);
 	double d = 0.5;
-	int i, j, cnt = 0, N = 100000;	//= atoi (argv[1]);
+	int64_t i, j, cnt = 0, N = 100000;	//= atoi (argv[1]);
 	point *a;
 	{
 		clock_t t;
@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
 		t = clock();
 		{
 			for (i = 0; i < N; i++) {
-				for (j = 0; j < N; j++) {
+				for (j = i+1; j < N; j++) {
 					if (distance(a[i], a[j]) < d)
 						cnt++;
 				}
@@ -54,5 +54,5 @@ int main(int argc, char *argv[])
 		printf("searching %f seconds \n", time_taken);
 	}
 
-	printf("%d edges shorter than %f\n", cnt, d);
+	printf("%lld edges shorter than %f\n", cnt, d);
 }
