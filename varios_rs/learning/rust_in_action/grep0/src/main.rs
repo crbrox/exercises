@@ -27,13 +27,23 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         .expect("pattern argument is required");
     let re = Regex::new(pattern).expect("regular expression must be valid");
 
-    let filename = args
-        .value_of("filename")
-        .expect("filename argument is required");
-    let f = File::open(filename)?;
-    let bf = BufReader::new(f);
+    let filename = args.value_of("filename").unwrap_or("-");
+    let reader: Box<dyn BufRead> = if filename == "-" {
+        let stdin = std::io::stdin();
+        Box::new(stdin.lock())
+    } else {
+        let f = File::open(filename)?;
+        Box::new(BufReader::new(f))
+    };
 
-    for line in bf.lines() {
+    process_line(reader, re)
+}
+
+fn process_line<T: BufRead + Sized>(
+    reader: T,
+    re: Regex,
+) -> Result<(), Box<dyn std::error::Error>> {
+    for line in reader.lines() {
         let line = line?;
         if re.is_match(&line) {
             println!("{}", line);
@@ -41,3 +51,5 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     }
     Ok(())
 }
+
+// cargo run -- "nar.*[zo]" nariz.txt 
