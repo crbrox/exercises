@@ -15,8 +15,10 @@ int main(void) {
     if (a[i])
       for (long long j = i; i * j < N; j++)
         a[i * j] = false;
+  long long count = 0;
   for (long long i = 2; i < N; i++)
     if (a[i])
-      printf("%4lld ", i);
-  putchar('\n');
+      count++;
+
+  printf("%lld primes\n", count);
 }

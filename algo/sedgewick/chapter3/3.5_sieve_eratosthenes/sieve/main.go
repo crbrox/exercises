@@ -3,9 +3,7 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
-	"os"
 )
 
 const n = 10e6
@@ -23,8 +21,6 @@ func main() {
 		defer pprof.StopCPUProfile()
 	*/
 
-	output := bufio.NewWriter(os.Stdout)
-
 	a := make([]bool, n)
 
 	a[0] = true // is non prime
@@ -36,10 +32,13 @@ func main() {
 			}
 		}
 	}
-	for i, isNonPrime := range a {
+
+	count := 0
+	for _, isNonPrime := range a {
 		if !isNonPrime { // is prime
-			fmt.Fprintf(output, "%4d ", i)
+			count++
 		}
 	}
-	fmt.Println()
+	fmt.Printf("%4d primes ", count)
+
 }
