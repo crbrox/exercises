@@ -40,5 +40,4 @@ fn parallel_sum(range: &[i32]) -> i32 {
 fn sum_bucket(range: &[i32]) -> i32 {
     // panic!("me muero porque quiero");
     range.iter().sum()
-
 }
