@@ -1,2 +1,7 @@
 [workspace]
-members = ["concat", "parallelism", "rand_cookbook"]
+members = [
+  "concat",
+  "parallelism",
+  "rand_cookbook",
+  "regexp",
+]
