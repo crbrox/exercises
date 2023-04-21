@@ -4,4 +4,5 @@ members = [
   "parallelism",
   "rand_cookbook",
   "regexp",
+  "command_line",
 ]
