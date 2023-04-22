@@ -5,4 +5,5 @@ members = [
   "rand_cookbook",
   "regexp",
   "command_line",
+  "env_vars",
 ]
