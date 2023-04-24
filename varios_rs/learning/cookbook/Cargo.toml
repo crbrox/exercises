@@ -6,4 +6,5 @@ members = [
   "regexp",
   "command_line",
   "env_vars",
+  "read_stdin",
 ]
