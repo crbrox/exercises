@@ -7,4 +7,7 @@ members = [
   "command_line",
   "env_vars",
   "read_stdin",
+  "var_args",
+  "vector",
+  "string",
 ]
