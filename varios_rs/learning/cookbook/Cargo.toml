@@ -10,4 +10,5 @@ members = [
   "var_args",
   "vector",
   "string",
+  "ch2",
 ]
