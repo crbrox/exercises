@@ -140,6 +140,10 @@ name = "var_args"
 version = "0.1.0"
 
 [[package]]
+name = "vecdequeue"
+version = "0.1.0"
+
+[[package]]
 name = "vector"
 version = "0.1.0"
 

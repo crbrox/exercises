@@ -9,6 +9,9 @@ members = [
   "read_stdin",
   "var_args",
   "vector",
+  "vecdequeue",
   "string",
   "ch2",
 ]
+
+resolver = "2"
