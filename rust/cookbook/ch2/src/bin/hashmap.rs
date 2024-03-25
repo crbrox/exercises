@@ -31,6 +31,13 @@ fn main() {
         println!("The removed series had a rating of {removed_value}");
     }
 
+    // Remove a key not in map
+    let removed_value = tv_ratings.remove("El coche fantástico");
+    match removed_value {
+        Some(previous) => println!("Valor anterior de 'El Coche Fantástico?: {previous}"),
+        None => println!("'El Coche Fantástico' no estaba en la lista"),
+    }
+
     // Iterating accesses all key and values
     println!("All ratings:");
     for (key, value) in &tv_ratings {
