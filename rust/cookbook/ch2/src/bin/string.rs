@@ -53,7 +53,6 @@ fn main() {
     let s: Vec<_> = string.split("::").collect();
     println!("split {s:?}");
 
-    
     let s: Vec<_> = string.split_inclusive("::").collect();
     println!("split_inclusive {s:?}");
 
@@ -101,9 +100,7 @@ fn main() {
     println!("{num:?}");
 
     let s = "My dad is the best dad";
-    println!("{}",s.replace("dad", "mom"));
-    println!("{}",s.to_lowercase());
-    println!("{}",s.to_uppercase());
-
-
+    println!("{}", s.replace("dad", "mom"));
+    println!("{}", s.to_lowercase());
+    println!("{}", s.to_uppercase());
 }
