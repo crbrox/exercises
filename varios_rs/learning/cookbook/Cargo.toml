@@ -12,6 +12,7 @@ members = [
   "vecdequeue",
   "string",
   "ch2",
+  "hashmap"
 ]
 
 resolver = "2"
